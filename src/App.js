@@ -15,6 +15,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import dayjs from 'dayjs';
 
 const columns = [
   { id: 'transferDate', label: 'Dados', minWidth: 170 },
@@ -40,8 +41,8 @@ function transform(column, value) {
 }
 
 function App() {
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState(dayjs('2011-01-01'));
+  const [endDate, setEndDate] = useState(dayjs());
   const [operator, setOperator] = useState(null);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
